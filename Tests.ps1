@@ -4,10 +4,10 @@
 
 
 
-$nonemptydata=$(Load-DataFromFiles "$testnonempty");
-$circulardata=$(Load-DataFromFiles "$testcircular");
-$working1data=$(Load-DataFromFiles "$testworking1");
-$working2data=$(Load-DataFromFiles "$testworking2");
+$nonemptydata=$(Load-DataFromFiles "$($testnonempty.CreateDirName())");
+$circulardata=$(Load-DataFromFiles "$($testcircular.CreateDirName())");
+$working1data=$(Load-DataFromFiles "$($testworking1.CreateDirName())");
+$working2data=$(Load-DataFromFiles "$($testworking2.CreateDirName())");
 
 
 # KhansAlgorithm($nonemptydata);
