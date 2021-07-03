@@ -2,16 +2,21 @@
 
 
 function CreateFiles([TestSetup]$testsetup){
-    [voice] New-Item -ItemType Directory -Force -Path "$PSScriptRoot/$($testsetup.createdirname)";
+    $createdirname="$($testsetup.CreateDirName())"
 
-    foreach ($file in $($this.GetEnumerator())) {
-        $filename="$PSScriptRoot/$($testsetup.createdirname)/$($file.Name).txt";
+    write-host $createdirname
+
+    New-Item -ItemType Directory -Force -Path "$createdirname";
+
+    foreach ($file in $($testsetup.GetEnumerator())) {
+        $filename="$createdirname/$($file.Name).txt";
         $file.value | Out-File $filename;
     }
 }
 
 foreach ($testsetup in $testsetups) {
-   CreateFiles $testsetup;
+    #$testetup;
+    CreateFiles $testsetup;
 }
 
 

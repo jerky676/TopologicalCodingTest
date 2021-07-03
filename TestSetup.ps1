@@ -2,8 +2,8 @@ class TestSetup
 {
     [string]$dirname;
 
-    [string] createdirname() {
-        return ".$($this.dirname)";
+    [string]CreateDirName() {
+        return "$PSScriptRoot/.$($this.dirname)";
     }
 
     [Hashtable]$data;

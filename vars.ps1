@@ -15,7 +15,7 @@ $testnonempty.data=@{
 $testsetups.add($testnonempty);
 
 $testcircular=New-Object TestSetup;
-$testcircular.dirname="$PSScriptRoot/CircularDataSet";
+$testcircular.dirname="CircularDataSet";
 $testcircular.data=@{
     a = @("c","e")
     b = @("e", "c")
@@ -27,7 +27,7 @@ $testcircular.data=@{
 $testsetups.add($testcircular);
 
 $testworking1=New-Object TestSetup;
-$testworking1.dirname="$PSScriptRoot/WorkingDataSet1";
+$testworking1.dirname="WorkingDataSet1";
 $testworking1.data=@{
     a = @("c","e")
     b = @("e", "c")
@@ -39,7 +39,7 @@ $testworking1.data=@{
 $testsetups.add($testworking1);
 
 $testworking2=New-Object TestSetup;
-$testworking2.dirname="$PSScriptRoot/WorkingDataSet2";
+$testworking2.dirname="WorkingDataSet2";
 $testworking2.data=@{
     "a" = @("c","e")
     "b" = @("e", "c", "f")
