@@ -7,7 +7,10 @@ foreach ($testsetup in $testsetups) {
     foreach ($file in $testsetup.data) {
         $filename="$PSScriptRoot/$file.txt"
 
-        Add-Content $filename $file.values
+        $file.values 
+
+
+        # $file.values | Out-File $filename 
 
         # foreach ($lines in $file.values) {
             
