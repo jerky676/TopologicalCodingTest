@@ -1,10 +1,8 @@
+. ("$PSScriptRoot/vars.ps1")
 . ("$PSScriptRoot/FileLoad.ps1")
 . ("$PSScriptRoot/KhansAlgorithm.ps1")
 
-$testnonempty="$PSScriptRoot/NonEmptyDataSet";
-$testcircular="$PSScriptRoot/CircularDataSet";
-$testworking1="$PSScriptRoot/WorkingDataSet1";
-$testworking2="$PSScriptRoot/WorkingDataSet2";
+
 
 $nonemptydata=$(Load-DataFromFiles "$testnonempty");
 $circulardata=$(Load-DataFromFiles "$testcircular");
