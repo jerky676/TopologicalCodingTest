@@ -12,7 +12,7 @@ $working1data=$(Load-DataFromFiles "$testworking1");
 $working2data=$(Load-DataFromFiles "$testworking2");
 
 
-KhansAlgorithm($nonemptydata);
-KhansAlgorithm($circulardata);
-KhansAlgorithm($working1data);
-KhansAlgorithm($working2data);
+# KhansAlgorithm($nonemptydata);
+# KhansAlgorithm($circulardata);
+# KhansAlgorithm($working1data);
+# KhansAlgorithm($working2data);

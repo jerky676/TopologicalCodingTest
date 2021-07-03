@@ -1,30 +1,34 @@
-function Load-DataFromFile([string]$filepath) {
+function Load-DataFromFiles([string]$filepath) {
 
-    $files=(Get-ChildItem -Path $PSScriptRoot -Filter *.txt -File | % { $_.FullName });
+    $files=(Get-ChildItem -Path $filepath -Filter *.txt -File | % { $_.FullName });
 
-    $primaries=@{};
+    $files;
 
-    
+    $filetable=@{};
 
     foreach($file in $files){
-        $filename=($file | split-pasth -leaf).Replace(".txt","");
 
-    if ($file -eq $Null){
-        $primaries[$file]=$null;
-    } else {
-        $primaries[$file]=New-Object System.Collections.ArrayList;
 
-        foreach($line in $filecontent)
-        {
-            [void] $primaries[$file].Add($line);
+
+        $filename=($file | split-path -leaf).Replace(".txt","");
+
+        $filename;
+
+        if ($filecontent -eq $Null){
+            $filetable[$filename]=$null;
+        } else {
+            $filetable[$file]=New-Object System.Collections.ArrayList;
+
+            foreach($line in $filecontent)
+            {
+                [void] $filetable[$file].Add($line);
+            }
         }
     }
-}
 
-$sorted=New-Object System.Collections.ArrayList;
-$empty=New-Object System.Collections.ArrayList;
+    $filetable;
 
-
+    return $filetable;
 }
 
 
