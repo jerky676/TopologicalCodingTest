@@ -2,8 +2,6 @@
 
 
 foreach ($testsetup in $testsetups) {
-
-
     New-Item -ItemType Directory -Force -Path $testsetup.dirname;
     
     foreach ($file in $testsetup.data) {
