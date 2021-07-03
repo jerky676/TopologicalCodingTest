@@ -1,34 +1,35 @@
 function Load-DataFromFiles([string]$filepath) {
-
-    $files=(Get-ChildItem -Path $filepath -Filter *.txt -File | % { $_.FullName });
-
-    $files;
-
-    $filetable=@{};
+    $files=(Get-ChildItem -Path $filepath -Filter *.txt -File | % { $_.FullName });   
+    $hashtable=@{};
 
     foreach($file in $files){
-
-
-
+       
         $filename=($file | split-path -leaf).Replace(".txt","");
+        $filecontent=$(Get-Content -Path $file);
+        $lines=New-Object System.Collections.ArrayList;
 
-        $filename;
+        write-host "content $filecontent";
 
-        if ($filecontent -eq $Null){
-            $filetable[$filename]=$null;
-        } else {
-            $filetable[$file]=New-Object System.Collections.ArrayList;
-
+        if ($filecontent -ne ""){
             foreach($line in $filecontent)
             {
-                [void] $filetable[$file].Add($line);
+                if ($line -ne ""){
+                    $lines.Add($line);
+                    write-host "line $line"
+                }
             }
         }
+        write-host "lines $lines"
+        $hashtable.Add($filename,$lines);
+        write-host "table $file ";
     }
 
-    $filetable;
+   
+    write-host "type $($hashtable.GetType())";
 
-    return $filetable;
+    $hashtable.keys;
+
+    return $hashtable;
 }
 
 
