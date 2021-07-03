@@ -1,6 +1,5 @@
 . ("$PSScriptRoot/TestSetup.ps1")
 
-
 $testsetups=New-Object System.Collections.ArrayList;
 
 $testnonempty=New-Object TestSetup;
