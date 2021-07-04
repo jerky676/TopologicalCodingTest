@@ -18,10 +18,10 @@ $working5data=$(Load-DataFromFiles "$($testworking5.CreateDirName())");
 
 
 
-# KhansAlgorithm($nonemptydata);
-# KhansAlgorithm($circulardata);
-# KhansAlgorithm($working1data);
-# KhansAlgorithm($working2data);
-# KhansAlgorithm($working3data);
-# KhansAlgorithm($working4data);
+KhansAlgorithm($nonemptydata);
+KhansAlgorithm($circulardata);
+KhansAlgorithm($working1data);
+KhansAlgorithm($working2data);
+KhansAlgorithm($working3data);
+KhansAlgorithm($working4data);
 KhansAlgorithm($working5data);
