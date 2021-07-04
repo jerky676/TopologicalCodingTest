@@ -1,6 +1,8 @@
 . ("$PSScriptRoot/vars.ps1")
 Write-Debug "Loaded vars.ps1"
 
+. "$PSScriptRoot/CreatedTestData.ps1"
+
 function CreateFiles([TestSetup]$testsetup){
     $createdirname="$($testsetup.CreateDirName())"
 

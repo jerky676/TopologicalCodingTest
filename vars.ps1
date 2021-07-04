@@ -69,13 +69,10 @@ $testworking3.data=@{
 $testworking4=New-Object TestSetup;
 $testworking4.dirname="WorkingDataSet4";
 $testworking4.data=@{
-    "a" = @("b","c","g")
-    "b" = @("b","e")
-    "c" = @("d")
-    "d" = @("e")
-    "e" = @()
-    "f" = @()
-    "g" = @("e")
+    "0" = @()
+    "1" = @("0")
+    "2" = @("1")
+    "3" = @("2")
 };
 
 [void]$testsetups.add($testworking4);

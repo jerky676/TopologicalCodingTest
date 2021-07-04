@@ -20,4 +20,4 @@ $working4data=$(Load-DataFromFiles "$($testworking4.CreateDirName())");
 # KhansAlgorithm($working1data);
 # KhansAlgorithm($working2data);
 # KhansAlgorithm($working3data);
-KhansAlgorithm($working3data);
+KhansAlgorithm($working4data);
