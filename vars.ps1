@@ -76,3 +76,16 @@ $testworking4.data=@{
 };
 
 [void]$testsetups.add($testworking4);
+
+$testworking5=New-Object TestSetup;
+$testworking5.dirname="WorkingDataSet5";
+$testworking5.data=@{
+    "0" = @()
+    "1" = @()
+    "2" = @("3")
+    "3" = @("1")
+    "4" = @("0","1")
+    "5" = @("0","2")
+};
+
+[void]$testsetups.add($testworking5);
