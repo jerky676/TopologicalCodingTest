@@ -28,26 +28,34 @@ function KhansAlgorithm([Hashtable]$files){
             $currentnode=$($nodeps[0]);
             [void] $sorted.Add($currentnode);
     
-            if ($depfiles.ContainsKey($currentnode)){
-                $depfiles.remove($currentnode);
-            }
+            # if ($depfiles.ContainsKey($currentnode)){
+                
+            # }
     
             foreach ($file in $depfiles.keys) {
                 $currentdeps=$depfiles[$file];
     
                 if ($currentdeps.Contains($currentnode))
-                {
+                { 
                     $currentdeps.remove($currentnode);
-                    write-host "Removed $currentnode from";
-                    $currentdeps
                 }
     
                 if ($currentdeps.count -lt 1){
+                    write-host "Added file $file to no deps";
                     [void] $nodeps.Add($file);
+                    
+                    write-host "removed $file from deps";
+                    $depfiles
                 }
-            }
+            }          
     
             $nodeps.Remove($currentnode);
+            foreach ($remove in $nodeps) {
+                [void] $depfiles.remove($remove);
+            }
+
+            write-host "Removed $currentnode from nodeps";
+            $nodeps
         } while ($nodeps.Length -gt 0);
     
         if ($depfiles.count -gt 0){
