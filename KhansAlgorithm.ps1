@@ -4,6 +4,8 @@ function KhansAlgorithm([Hashtable]$files){
         $nodeps=$files.clone();
         $depfiles=$files.clone();
 
+        $depfiles
+
         @($nodeps.keys) | % { 
             if ($nodeps[$_]) { $nodeps.Remove($_) } 
         };
