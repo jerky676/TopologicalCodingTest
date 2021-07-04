@@ -1,4 +1,5 @@
 . ("$PSScriptRoot/TestSetup.ps1")
+write-host "loaded testsetup"
 
 $testsetups=New-Object System.Collections.ArrayList;
 
@@ -12,7 +13,7 @@ $testnonempty.data=@{
     e = @("c")
 };
 
-$testsetups.add($testnonempty);
+[void]$testsetups.add($testnonempty);
 
 $testcircular=New-Object TestSetup;
 $testcircular.dirname="CircularDataSet";
@@ -24,7 +25,7 @@ $testcircular.data=@{
     e = @()
 };
 
-$testsetups.add($testcircular);
+[void]$testsetups.add($testcircular);
 
 $testworking1=New-Object TestSetup;
 $testworking1.dirname="WorkingDataSet1";
@@ -36,7 +37,7 @@ $testworking1.data=@{
     e = @("c")
 };
 
-$testsetups.add($testworking1);
+[void]$testsetups.add($testworking1);
 
 $testworking2=New-Object TestSetup;
 $testworking2.dirname="WorkingDataSet2";
@@ -49,4 +50,4 @@ $testworking2.data=@{
     "f" = @()
 };
 
-$testsetups.add($testworking2);
+[void]$testsetups.add($testworking2);
