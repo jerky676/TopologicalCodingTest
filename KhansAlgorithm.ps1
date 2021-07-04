@@ -38,6 +38,8 @@ function KhansAlgorithm([Hashtable]$files){
                 if ($currentdeps.Contains($currentnode))
                 {
                     $currentdeps.remove($currentnode);
+                    write-host "Removed $currentnode from";
+                    $currentdeps
                 }
     
                 if ($currentdeps.count -lt 1){
