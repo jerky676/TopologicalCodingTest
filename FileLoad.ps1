@@ -1,4 +1,5 @@
 function Load-DataFromFiles([string]$filepath) {
+
     $files=(Get-ChildItem -Path $filepath -Filter *.txt -File | % { $_.FullName });   
     $table=New-Object System.Collections.Hashtable;
 

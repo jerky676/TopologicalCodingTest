@@ -4,8 +4,6 @@ function KhansAlgorithm([Hashtable]$files){
         $nodeps=$files.clone();
         $depfiles=$files.clone();
 
-        $depfiles
-
         @($nodeps.keys) | % { 
             if ($nodeps[$_]) { $nodeps.Remove($_) } 
         };
@@ -14,7 +12,12 @@ function KhansAlgorithm([Hashtable]$files){
 
         @($depfiles.keys) | % { 
             if (-not $depfiles[$_]) { $depfiles.Remove($_) } 
-        };      
+        };
+        
+        write-host "no deps $($nodeps.Count) $($nodeps.Count -lt 1) $($nodeps.GetType())";
+        $nodeps
+        write-host "has deps"
+        $depfiles
    
         if ($nodeps.Count -lt 1){
             write-host "Circular Reference - No Empty Dependancies";
@@ -49,8 +52,10 @@ function KhansAlgorithm([Hashtable]$files){
             write-host "Circular Reference";
             throw "Failure";
         }
-    
-        return $sorted;
+
+
+        return ($sorted-join ',')
+        # return $sorted;
     }
     catch {
         Write-Host $_;

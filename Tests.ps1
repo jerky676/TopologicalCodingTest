@@ -1,18 +1,21 @@
 . ("$PSScriptRoot/vars.ps1")
-write-host "loaded vars";
+write-debug "loaded vars.ps1";
 . ("$PSScriptRoot/FileLoad.ps1")
-write-host "loaded fileload";
+write-debug "loaded FileLoad.ps1";
 . ("$PSScriptRoot/KhansAlgorithm.ps1")
-write-host "loaded Algorithm";
+write-debug "loaded KhansAlgorithm.ps1";
 
 
 $nonemptydata=$(Load-DataFromFiles "$($testnonempty.CreateDirName())");
 $circulardata=$(Load-DataFromFiles "$($testcircular.CreateDirName())");
 $working1data=$(Load-DataFromFiles "$($testworking1.CreateDirName())");
 $working2data=$(Load-DataFromFiles "$($testworking2.CreateDirName())");
+$working3data=$(Load-DataFromFiles "$($testworking3.CreateDirName())");
 
 
-KhansAlgorithm($nonemptydata);
-KhansAlgorithm($circulardata);
-KhansAlgorithm($working1data);
-KhansAlgorithm($working2data);
+
+# KhansAlgorithm($nonemptydata);
+# KhansAlgorithm($circulardata);
+# KhansAlgorithm($working1data);
+# KhansAlgorithm($working2data);
+KhansAlgorithm($working3data);
